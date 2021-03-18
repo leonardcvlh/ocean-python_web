@@ -1,8 +1,11 @@
-<!-- PAGE HTML-->
-<html>
-    <head>
-    </head>
-    <body>
-        <h1>Olá, Mundo! </h1>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Olá, {{ user.username }} </h1>
+<div>
+    {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+</div>
+
+{% endblock %}
